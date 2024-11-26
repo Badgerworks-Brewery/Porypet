@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import *
-import random
+import secrets
 
 class DraggableWindow(tk.Toplevel):
     def __init__(self, master=None, **kwargs):
@@ -51,8 +51,8 @@ canvas.pack()
 speed_factor = 0.1
 
 def move_porygon():
-    target_x = random.randint(0, win.winfo_screenwidth() - window.winfo_reqwidth())
-    target_y = random.randint(0, win.winfo_screenheight() - window.winfo_reqheight())
+    target_x = secrets.SystemRandom().randint(0, win.winfo_screenwidth() - window.winfo_reqwidth())
+    target_y = secrets.SystemRandom().randint(0, win.winfo_screenheight() - window.winfo_reqheight())
 
     smooth_movement(window, target_x, target_y, speed_factor)
 
